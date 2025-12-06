@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script lists files in the current directory and prints only the part after the first dash
+
+for item in *; do
+  # Skip directories or files without a dash
+  if [[ "$item" == *-* ]]; then
+    echo "${item#*-}"
+  else
+    echo "$item"
+  fi
+done
